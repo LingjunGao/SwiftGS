@@ -9,8 +9,8 @@ SwiftGS is an optimized system and algorithm co-design for accelerating 3D Gauss
 Clone and install the SwiftGS repository:
 
 ```bash
-git clone --recurse-submodules https://github.com/LingjunGao/swiftgs
-cd swiftgs/
+git clone https://github.com/LingjunGao/SwiftGS.git
+cd SwiftGS/
 ```
 
 ### One-command setup (recommended)
