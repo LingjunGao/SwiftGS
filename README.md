@@ -4,16 +4,41 @@ SwiftGS is an optimized system and algorithm co-design for accelerating 3D Gauss
 
 ## Installation
 
-### Install SwiftGS from Source
-
-Clone and install the SwiftGS repository:
+Clone the repository first:
 
 ```bash
 git clone https://github.com/LingjunGao/SwiftGS.git
 cd SwiftGS/
 ```
 
-### One-command setup (recommended)
+### Method 1: Use the prebuilt Docker image
+
+If you want the fastest start, use the published Docker image on Docker Hub:
+
+```bash
+docker pull lingjun0203/swiftgs:v1.0
+docker run --gpus all -it --rm \
+    -v /path/to/data:/workspace/swiftgs/examples/data \
+    -v /path/to/results:/workspace/swiftgs/examples/results \
+    lingjun0203/swiftgs:v1.0 bash
+```
+
+Inside the container, initialize the dataset and pretrained checkpoints with:
+
+```bash
+cd /workspace/swiftgs
+bash docker_setup.sh
+```
+
+Then run evaluation with:
+
+```bash
+bash examples/benchmarks/Evaluation.sh
+```
+
+This method uses the prebuilt CUDA 11.8 environment from the Docker image, so no extra environment setup is needed.
+
+### Method 2: Install from source with the setup script
 
 From the SwiftGS root directory, run:
 
@@ -25,7 +50,8 @@ This command will:
 - install required system packages,
 - create and activate the `swiftgs` conda environment,
 - install SwiftGS and Python dependencies,
-- download the benchmark dataset.
+- download the benchmark dataset,
+- download the pretrained `Benchmark_Training` checkpoints.
 
 > If you run `bash ./setup_swiftgs.sh`, setup will still run, but conda activation will not stay active in your current shell.
 
@@ -33,7 +59,7 @@ This command will:
 
 ### Training (Optional)
 
-Training is optional. Pre-trained checkpoints for the benchmark scenes are downloaded automatically by `setup_swiftgs.sh`.
+Training is optional. Pre-trained checkpoints for the benchmark scenes are downloaded automatically by `setup_swiftgs.sh` or `docker_setup.sh`.
 
 If you prefer to train your own models, run:
 

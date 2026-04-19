@@ -1,0 +1,20 @@
+# Exclude local runtime data/checkpoints from Docker build context
+examples/data/
+examples/results/
+
+# Exclude build artifacts and caches
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Git metadata
+.git/
+.gitmodules
+
+# Optional local files
+*.log
