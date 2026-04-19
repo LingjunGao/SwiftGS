@@ -88,8 +88,16 @@ If neither folder is found, the script will print instructions on how to train o
 
 This work is based on the [gsplat library](https://github.com/nerfstudio-project/gsplat) developed by the Nerfstudio team. We are grateful for their excellent open-source contribution, which provided the foundation for our optimizations.
 
-If you find the original gsplat library useful in your projects or papers, please consider citing:
+If you find the ideas or implementation in this project useful, please consider citing our paper below. Since SwiftGS is built on top of the gsplat library, we also encourage citing gsplat where appropriate.
 
+```
+@inproceedings{gao2026swiftgs,
+    title={SwiftGS: Algorithm and System Co-Optimization for Fast 3D Gaussian Splatting on GPU},
+    author={Lingjun Gao and Zhican Wang and Zhiwen Mo and Hongxiang Fan},
+    booktitle={Proceedings of the Ninth Annual Conference on Machine Learning and Systems (MLSys 2026)},
+    year={2026},
+}
+```
 ```
 @article{ye2024gsplatopensourcelibrarygaussian,
     title={gsplat: An Open-Source Library for {Gaussian} Splatting}, 
